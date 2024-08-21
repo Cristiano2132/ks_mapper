@@ -143,7 +143,6 @@ if __name__ == '__main__':
     df['id'] = range(2000)
     df['y'] = df['A'] + 2*df['B'] - 8*df['C'] + df['D'] + df['E']/2 + df['F'] + np.random.normal(0, 1, 2000)
     
-    print(df.head())
  
     X_train, X_test, y_train, y_test = train_test_split(df[['id', 'A', 'B', 'C', 'D', 'E', 'F']], df[['id','y']], test_size=0.25, random_state=42)
     
@@ -165,8 +164,8 @@ if __name__ == '__main__':
     
     mapper = DevPrdModelPerformanceMapper(df1=df1, df2=df2, features_modelo=['A', 'B', 'C', 'D', 'E', 'F'])
     # print(mapper.get_ks_2samp(var = 'A', prefix1 = 'df1_', prefix2 = 'df2_', id_column = 'id'))
-    print(mapper.get_ks_features(features_to_map = ['A', 'B', 'C', 'D', 'E', 'F'], prefix1 = 'df1_', prefix2 = 'df2_', id_column = 'id'))
-    # print(mapper.get_ks_variation_with_feature_swap(model_path = model_path, features_model = ['A', 'B', 'C', 'D', 'E', 'F'], features_to_map = ['A', 'B', 'C', 'D', 'E', 'F'], id_column = 'id', copy_df1_to_df2 = True, model_predict_method = 'predict'))
+    # print(mapper.get_ks_features(features_to_map = ['A', 'B', 'C', 'D', 'E', 'F'], prefix1 = 'df1_', prefix2 = 'df2_', id_column = 'id'))
+    print(mapper.get_ks_variation_with_feature_swap(model_path = model_path, features_model = ['A', 'B', 'C', 'D', 'E', 'F'], features_to_map = ['A', 'B', 'C', 'D', 'E', 'F'], id_column = 'id', copy_df1_to_df2 = True, model_predict_method = 'predict'))
     
 
     
